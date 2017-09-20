@@ -77,6 +77,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\css\bootstrap-grid.css" />
+    <Content Include="content\css\bootstrap-grid.min.css" />
+    <Content Include="content\css\bootstrap-reboot.css" />
+    <Content Include="content\css\bootstrap-reboot.min.css" />
+    <Content Include="content\css\bootstrap.css" />
+    <Content Include="content\css\bootstrap.min.css" />
+    <Content Include="content\js\bootstrap.js" />
+    <Content Include="content\js\bootstrap.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="Web.config">
@@ -99,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="content\css\bootstrap-grid.css.map" />
+    <Content Include="content\css\bootstrap-grid.min.css.map" />
+    <Content Include="content\css\bootstrap-reboot.css.map" />
+    <Content Include="content\css\bootstrap-reboot.min.css.map" />
+    <Content Include="content\css\bootstrap.css.map" />
+    <Content Include="content\css\bootstrap.min.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

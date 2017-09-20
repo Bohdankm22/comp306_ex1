@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Pizzashop</title>
+    <link href="content/css/bootstrap.css" rel="stylesheet" />
     <style type="text/css">
         #TextArea1 {
             height: 86px;
@@ -14,42 +15,40 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <h3 style="margin-left: 360px">Welcome to the restourant!</h3>
+    <div  class="jumbotron text-center">
+        <h3>Welcome to the restourant!</h3>
         <p style="margin-left: 360px">&nbsp;</p>
     </div>
-
-        <div style="margin-left: 80px">
-            <asp:Label ID="Label1" runat="server" Text="Create your order!"></asp:Label>
-        </div>
+        
         <p style="margin-left: 80px">
             <asp:Label ID="Label2" runat="server" Text="First Name:"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server" Width="368px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox1" runat="server" Width="362px"></asp:TextBox>
         </p>
         <p style="margin-left: 80px">
             <asp:Label ID="Label3" runat="server" Text="Last Name:"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox2" runat="server" Width="366px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+            <asp:TextBox ID="TextBox2" runat="server" Width="360px"></asp:TextBox>
         </p>
         <p style="margin-left: 80px">
             <asp:Label ID="Label4" runat="server" Text="City:"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox3" runat="server" Width="368px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox3" runat="server" Width="360px"></asp:TextBox>
         </p>
         <p style="margin-left: 80px">
             <asp:Label ID="Label5" runat="server" Text="Postal Code:"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox4" runat="server" Width="368px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+            <asp:TextBox ID="TextBox4" runat="server" Width="362px"></asp:TextBox>
         </p>
         <p style="margin-left: 80px">
             <asp:Label ID="Label6" runat="server" Text="Phone Number:"></asp:Label>
-            <asp:TextBox ID="TextBox5" runat="server" Width="374px"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox5" runat="server" Width="362px"></asp:TextBox>
         </p>
         <p style="margin-left: 80px">
             <asp:Label ID="Label7" runat="server" Text="Province:"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="DropDownList1" runat="server">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList1" runat="server" Width="373px">
                 <asp:ListItem>Ontario</asp:ListItem>
                 <asp:ListItem>Quebec</asp:ListItem>
                 <asp:ListItem>Nova Scotia</asp:ListItem>
@@ -84,8 +83,9 @@
             <asp:Label ID="Label9" runat="server" Text="Comments:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <textarea id="TextArea1" name="S1"></textarea></p>
-        <p>
-            &nbsp;</p>
+        <p style="margin-left: 360px">
+            <asp:Button ID="Button1" runat="server" Text="Button" class="btn btn-success"/>
+        </p>
     </form>
 </body>
 </html>
