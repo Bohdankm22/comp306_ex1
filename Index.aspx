@@ -27,8 +27,11 @@
         </p>
         <p style="margin-left: 80px">
             <asp:Label ID="Label3" runat="server" Text="Last Name:"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox2" runat="server" Width="360px"></asp:TextBox>
+        </p>
+        <p style="margin-left: 360px">
+            <asp:Button ID="Button2" runat="server" Text="Retraive data" class="btn btn-success" OnClick="Button2_Click"/>
         </p>
         <p style="margin-left: 80px">
             <asp:Label ID="Label4" runat="server" Text="City:"></asp:Label>
@@ -38,12 +41,12 @@
         <p style="margin-left: 80px">
             <asp:Label ID="Label5" runat="server" Text="Postal Code:"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-            <asp:TextBox ID="TextBox4" runat="server" Width="362px"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" runat="server" Width="362px" MaxLength="12"></asp:TextBox>
         </p>
         <p style="margin-left: 80px">
             <asp:Label ID="Label6" runat="server" Text="Phone Number:"></asp:Label>
             &nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox5" runat="server" Width="362px"></asp:TextBox>
+            <asp:TextBox ID="TextBox5" runat="server" Width="362px" MaxLength="15"></asp:TextBox>
         </p>
         <p style="margin-left: 80px">
             <asp:Label ID="Label7" runat="server" Text="Province:"></asp:Label>
@@ -82,7 +85,7 @@
         <p style="margin-left: 80px">
             <asp:Label ID="Label9" runat="server" Text="Comments:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <textarea id="TextArea1" name="S1"></textarea></p>
+            <textarea id="TextArea1" name="S1" maxlength="500"></textarea></p>
         <p style="margin-left: 360px">
             <asp:Button ID="Button1" runat="server" Text="Button" class="btn btn-success"/>
         </p>
