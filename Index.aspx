@@ -55,7 +55,7 @@
                 <div class="col-2"></div>
                 <div class="col-3">
 
-                    <asp:Button ID="Button2" runat="server" Text="Retrieve data" class="btn btn-success" OnClick="Button2_Click" />
+                    <asp:Button ID="Button2" runat="server" Text="Remember Me" class="btn btn-success" OnClick="Button2_Click" />
                 </div>
             </div>
        

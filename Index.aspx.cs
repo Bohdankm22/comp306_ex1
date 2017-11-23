@@ -138,21 +138,14 @@ namespace GoogleCloudSamples
 
         private void SaveUser()
         {
-            if (CheckUserExist(TextBox1.Text, TextBox2.Text))
-            {
-                Type cstype = this.GetType();
-
-                // Get a ClientScriptManager reference from the Page class.
-                ClientScriptManager cs = Page.ClientScript;
-
-                // Check to see if the startup script is already registered.
-                if (!cs.IsStartupScriptRegistered(cstype, "PopupScript"))
-                {
-                    String cstext = "alert('User could not be stored as already exists!');";
-                    cs.RegisterStartupScript(cstype, "PopupScript", cstext, true);
-                }
-                return;
-            }
+            bool userExists = CheckUserExist(TextBox1.Text, TextBox2.Text);
+            String commandInsert = @"INSERT INTO User(userFirstName, userLastName, userCity, userPostalCode, userProneNumber, userProvince, " +
+                        "userChosePizza, userChoseCola, userChoseBeer, userChosePasta, userChoseSalad, userChoseRavioli, userChoseDelivery, userComment) " +
+                        " VALUES(@fn,@ln,@city, @postCode, @phNumb, @prov, @pizza, @cola, @beer, @pasta, @salad, @ravi, @delivery, @comment)"; ;
+            String commandUpdate = @"UPDATE User SET userCity = @city, userPostalCode = @postCode, userProneNumber = @phNumb, " +
+                "userProvince = @prov, userChosePizza = @pizza, userChoseCola = @cola, userChoseBeer = @beer, userChosePasta = @pasta, " +
+                "userChoseSalad = @salad, userChoseRavioli = @ravi, userChoseDelivery = @delivery, userComment = @comment WHERE " +
+                "userFirstName = @fn AND userLastName = @ln;";
 
             using (MySqlConnection conn = new MySqlConnection(DBGateway()))
             {
@@ -160,9 +153,14 @@ namespace GoogleCloudSamples
                 {
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = @"INSERT INTO User(userFirstName, userLastName, userCity, userPostalCode, userProneNumber, userProvince, " +
-                        "userChosePizza, userChoseCola, userChoseBeer, userChosePasta, userChoseSalad, userChoseRavioli, userChoseDelivery, userComment) " +
-                        " VALUES(@fn,@ln,@city, @postCode, @phNumb, @prov, @pizza, @cola, @beer, @pasta, @salad, @ravi, @delivery, @comment)";
+                    if (userExists)
+                    {
+                        cmd.CommandText = commandUpdate;
+                    } else
+                    {
+                        cmd.CommandText = commandInsert;
+                    }
+                    
 
                     cmd.Parameters.AddWithValue("@fn", TextBox1.Text);
                     cmd.Parameters.AddWithValue("@ln", TextBox2.Text);
