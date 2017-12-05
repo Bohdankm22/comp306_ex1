@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using GoogleCloudSamples.App_Start;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,6 +17,13 @@ namespace GoogleCloudSamples
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
+            Image1.ImageUrl = Pics.getInstance().imagePizza;
+            Image2.ImageUrl = Pics.getInstance().cola;
+            Image3.ImageUrl = Pics.getInstance().beer;
+            Image4.ImageUrl = Pics.getInstance().pasta;
+            Image5.ImageUrl = Pics.getInstance().salad;
+            Image6.ImageUrl = Pics.getInstance().ravioli;
         }
 
         private void GetUser()
@@ -234,6 +242,47 @@ namespace GoogleCloudSamples
             sqlConnection1.Close();
 
             return found;
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string defaultImagetoUpload = getRbValue();
+            
+            if (image.HasFile)
+            {
+                HttpPostedFileBase filebase = new HttpPostedFileWrapper(HttpContext.Current.Request.Files["image"]);
+                ImageMy imageUploader = new ImageMy("comp-agnm-restaurant");
+                var imageUrl = imageUploader.UploadImage(filebase, defaultImagetoUpload);
+            }
+        }
+
+        private string getRbValue()
+        {
+            if (RadioButton3.Checked)
+            {
+                return "pizza.jpg";
+            }
+            if (RadioButton4.Checked)
+            {
+                return "cola.jpg";
+            }
+            if (RadioButton5.Checked)
+            {
+                return "beer.jpg";
+            }
+            if (RadioButton6.Checked)
+            {
+                return "pasta.jpg";
+            }
+            if (RadioButton7.Checked)
+            {
+                return "salad.jpg";
+            }
+            if (RadioButton8.Checked)
+            {
+                return "ravioli.jpg";
+            }
+            return "beer.jpg";
         }
     }
 }

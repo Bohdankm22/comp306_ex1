@@ -118,6 +118,11 @@
                 </div>
 
             </div>
+            <div class="row">
+                <div class="col-2">
+                    <a href="https://storage.googleapis.com/comp-agnm-restaurant/menu.pdf">Download the menu</a>
+                </div>
+           </div>
          
             <div class="row">
                 <div class="col-2">
@@ -127,13 +132,35 @@
 
 
                     <asp:CheckBoxList ID="CheckBoxList1" runat="server" Width="171px">
-                        <asp:ListItem>Pizza</asp:ListItem>
+                        <asp:ListItem>Pizza</asp:ListItem> 
                         <asp:ListItem>Cola</asp:ListItem>
                         <asp:ListItem>Beer</asp:ListItem>
                         <asp:ListItem>Pasta</asp:ListItem>
                         <asp:ListItem>Salad</asp:ListItem>
                         <asp:ListItem>Ravioli</asp:ListItem>
                     </asp:CheckBoxList>
+                </div>
+                <div class="col-4">
+                    <asp:Image ID="Image1" runat="server" Height="55" Width="80"/><br />
+                    <asp:Image ID="Image2" runat="server" Height="55" Width="80"/><br />
+                    <asp:Image ID="Image3" runat="server" Height="55" Width="80"/><br />
+                    <asp:Image ID="Image4" runat="server" Height="55" Width="80"/><br />
+                    <asp:Image ID="Image5" runat="server" Height="55" Width="80"/><br />
+                    <asp:Image ID="Image6" runat="server" Height="55" Width="80"/>
+                </div>
+                <div class="col-5">
+
+                    <asp:RadioButton ID="RadioButton3" runat="server" GroupName="pics" Height="55" Text="Pizza"/><br />
+                    <asp:RadioButton ID="RadioButton4" runat="server" GroupName="pics" Height="55" Text="Cola"/><br />
+                    <asp:RadioButton ID="RadioButton5" runat="server" GroupName="pics" Height="55" Text="Beer"/><br />
+                    <asp:RadioButton ID="RadioButton6" runat="server" GroupName="pics" Height="55" Text="Pasta"/><br />
+                    <asp:RadioButton ID="RadioButton7" runat="server" GroupName="pics" Height="55" Text="Salad"/><br />
+                    <asp:RadioButton ID="RadioButton8" runat="server" GroupName="pics" Height="55" Text="Ravioli"/><br />
+                    
+                    <asp:FileUpload ID="image"  Value="image" runat="server" enctype="multipart/form-data" />
+                    <br />
+                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Upload picture" />
+                    
                 </div>
 
             </div>
